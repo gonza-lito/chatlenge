@@ -20,15 +20,17 @@ export class UserList extends React.Component<IUserListProps> {
     }
 
     public componentDidMount(): void {
-        console.log('users list',this.props.userList);
+        console.log('users list', this.props.userList);
     }
     public render() {
-        const users = map(this.props.userList, (user) => <User key={user.id} user={user}/>);
+        const users = map(this.props.userList, (user) => <User key={user.id} user={user} />);
         return (
 
-                <div className="users box">
-                    {users}
-                </div>
+            <div className="users box list">
+                <ul>
+                {users}
+                </ul>
+            </div>
 
 
         );

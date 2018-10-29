@@ -19,9 +19,9 @@ export class Message extends React.Component<IMessageProps> {
 
     public render() {
         return (
-            <li>
-                <i>{this.props.message.userName}:</i>
-                <span>{this.props.message.text}</span>
+            <li className="columns">
+                <b className="column is-1 has-text-right">{this.props.message.userName}:</b>
+                <i className="column has-text-left">{this.props.message.text}</i>
             </li>
 
         );

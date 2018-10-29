@@ -21,8 +21,11 @@ export class Messages extends React.Component<IMessagesProps> {
 
     public render() {
         return (
-                <div className="messages box">
-                    {map(this.props.chatHistory, (msg) => <Message key={msg.id} message={msg}/>)}
+                <div className="messages box list">
+
+                    <ul>
+                        {map(this.props.chatHistory, (msg) => <Message key={msg.id} message={msg}/>)}
+                    </ul>
                 </div>
 
 

@@ -42,13 +42,10 @@ export class MessageForm extends React.Component<IMessageFormProps, IMessageForm
             <div className="message-form">
                 <form onSubmit={this.handleSubmit}>
                     <div className="field is-horizontal">
-                        <div className="field-label is-normal">
-                            <label className="label">Message</label>
-                        </div>
                         <div className="field-body">
                             <div className="field">
                                 <p className="control">
-                                    <input className="input" type="text" placeholder="Text" value={this.state.messageText} onChange={this.handleOnChange} />
+                                    <input className="input" name="message" type="text" placeholder="Text" value={this.state.messageText} onChange={this.handleOnChange} />
                                 </p>
                             </div>
                         </div>

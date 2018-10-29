@@ -36,7 +36,7 @@ class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <h1 className="title">
+        <h1 className="title is-1">
           Chat app
       </h1>
         <div>
