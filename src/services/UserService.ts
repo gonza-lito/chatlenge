@@ -1,18 +1,31 @@
+import { observable } from 'mobx';
+import { IUser } from 'src/interfaces/IUser';
+
+import { Events } from './Events';
 import { SocketService } from './SocketsService';
 
 export class UserService {
-    private socket: SocketService;
+    @observable public currentUser?: IUser;
+    private socketService: SocketService;
+
     constructor(socket: SocketService) {
-        this.socket = socket;
+        this.socketService = socket;
+
+        this.socketService.on('disconnect',this.logOut )
     }
 
-    public logIn(user: IUser): void {
-        this.socket.login(user);
+    public logIn(username: string): void {
+        this.socketService.emit(Events.userLogIn, username, (user: IUser)=> {
+            this.currentUser = user;
+        } );
+
     }
+
+    public logOut(): void {
+        this.currentUser = undefined;
+    }
+
+
 
 }
 
-export interface IUser {
-    name: string;
-    id: string;
-}

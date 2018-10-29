@@ -1,12 +1,7 @@
 export const Events = {
-    chat: {
-        messageSend: 'MESSAGE_SEND',
-        messagesUpdate: 'MESSAGES_UPDATE',
-    },
-    user: {
-        connected: 'USER_CONNECTED',
-        disconnected: 'USER_DISCONNECTED',
-        logIn: 'USER_LOGIN',
-        typing: 'USER_TYPING',
-    }
+    messageSend: 'MESSAGE_SEND',
+    messagesUpdate: 'MESSAGES_UPDATE',
+    userListUpdate: 'USERS_UPDATED',
+    userLogIn: 'USER_LOGIN',
+    userTyping: 'USER_TYPING'
 }

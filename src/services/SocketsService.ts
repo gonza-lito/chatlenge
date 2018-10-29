@@ -1,20 +1,24 @@
 import * as socketio from 'socket.io-client';
 
 import { config } from '../config';
-import { Events } from './Events';
-import { IUser } from './UserService';
+
+// import { Events } from './Events';
+// import { IUser } from './UserService';
 
 export class SocketService {
     private socketConnection: SocketIOClient.Socket;
 
     public connect(): void {
         this.socketConnection = socketio(config.serverUrl);
-        this.socketConnection.on('connect', () => {
-            // tslint:disable-next-line:no-console
-            console.log('connected');
-        })
+        this.socketConnection.on('connect',() => console.log('connected to socket'))
     }
 
+    public emit(event: string, ...args:any[]): void {
+        this.socketConnection.emit(event, ...args);
+    }
+    public on(event: string, callback: (...args: any[]) => void): void {
+        this.socketConnection.on(event, callback);
+    }
 
     public getSocket(): SocketIOClient.Socket { return this.socketConnection }
 
