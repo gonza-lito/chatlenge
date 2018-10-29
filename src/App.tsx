@@ -43,7 +43,11 @@ class App extends React.Component {
           {
            !this.isLoggedIn ?
               <Login userService={this.userService} />
-            : <ChatView users={this.chatStore.connectedUsers}  messages={this.chatStore.chatHistory} messageService={this.messageService}/>
+            : <ChatView users={this.chatStore.connectedUsers}
+              messages={this.chatStore.chatHistory}
+              messageService={this.messageService}
+              usersTyping={this.chatStore.usersTyping}
+              tempMessages={this.chatStore.temporaryMessages}/>
 
           }
 

@@ -1,5 +1,3 @@
-import 'bulma';
-
 import * as React from 'react';
 import { IUser } from 'src/interfaces/IUser';
 

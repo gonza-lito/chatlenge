@@ -1,5 +1,3 @@
-import 'bulma';
-
 import * as React from 'react';
 
 import { IMessage } from '../interfaces/IMessage';

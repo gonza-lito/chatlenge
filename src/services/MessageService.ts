@@ -22,8 +22,12 @@ export class MessageService {
     }
 
     public sendTyping(): void {
-        this.socket.emit(Events.userTyping);
+        if (!this.userService.currentUser) { return }
+        this.socket.emit(Events.userTyping, this.userService.currentUser.name);
     }
-
+    public sendStopTyping(): void {
+        if (!this.userService.currentUser) { return }
+        this.socket.emit(Events.userStoppedTyping,  this.userService.currentUser.name);
+    }
 }
 

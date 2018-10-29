@@ -1,5 +1,3 @@
-import 'bulma';
-
 import { map } from 'lodash';
 import { observer } from 'mobx-react';
 import * as React from 'react';

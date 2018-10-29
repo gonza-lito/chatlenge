@@ -2,9 +2,6 @@ import * as socketio from 'socket.io-client';
 
 import { config } from '../config';
 
-// import { Events } from './Events';
-// import { IUser } from './UserService';
-
 export class SocketService {
     private socketConnection: SocketIOClient.Socket;
 

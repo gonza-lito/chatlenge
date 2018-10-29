@@ -1,5 +1,3 @@
-import 'bulma';
-
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import { UserService } from 'src/services/UserService';
@@ -48,7 +46,7 @@ class Login extends React.Component<ILoginFormProps, ILoginFormState> {
                     <div className="field">
                         <label className="label">Name</label>
                         <div className="control">
-                            <input className="input" type="text" placeholder="Text input" value={this.state.userName} onChange={this.handleOnChange}/>
+                            <input className="input" type="text" placeholder="User name, press enter to log in..." value={this.state.userName} onChange={this.handleOnChange}/>
                             {
                                 this.state.errorMessage ? error: ''
                             }

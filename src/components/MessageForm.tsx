@@ -1,5 +1,3 @@
-import 'bulma';
-
 import * as React from 'react';
 
 import { MessageService } from '../services/MessageService';
@@ -25,10 +23,10 @@ export class MessageForm extends React.Component<IMessageFormProps, IMessageForm
     }
     public handleSubmit(evt: React.FormEvent<HTMLFormElement>): void {
         evt.preventDefault();
-
+        if(!this.state.messageText.length) {return;}
         this.props.messageService.sendMessage(this.state.messageText)
         this.setState({ messageText: '' });
-
+        this.props.messageService.sendStopTyping();
     }
 
     public handleOnChange(evt: any): void {
@@ -45,7 +43,7 @@ export class MessageForm extends React.Component<IMessageFormProps, IMessageForm
                         <div className="field-body">
                             <div className="field">
                                 <p className="control">
-                                    <input className="input" name="message" type="text" placeholder="Text" value={this.state.messageText} onChange={this.handleOnChange} />
+                                    <input className="input" name="message" type="text" placeholder="Message, press enter to send" value={this.state.messageText} onChange={this.handleOnChange} />
                                 </p>
                             </div>
                         </div>

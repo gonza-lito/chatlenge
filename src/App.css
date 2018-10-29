@@ -31,3 +31,7 @@
 .list {
   height: 100%;
 }
+
+.chat-view {
+  height: 550px;
+}
